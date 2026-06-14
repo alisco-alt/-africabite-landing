@@ -914,6 +914,8 @@
             color: var(--orange);
             cursor: pointer;
             transition: all 0.3s;
+            text-align: center;
+            text-decoration: none;
         }
 
         .pricing-card.popular .pricing-btn {
@@ -1567,7 +1569,7 @@
                     <li><span class="check">✓</span> FAQ automatisée</li>
                     <li><span class="check">✓</span> Support par email</li>
                 </ul>
-                <button class="pricing-btn">Commencer</button>
+                <a href="#contact" class="pricing-btn" onclick="document.getElementById('plan').value='basic'; var el = document.getElementById('contact-form'); el.scrollIntoView({behavior:'smooth', block:'center'}); return false;">Commencer</a>
             </div>
             <div class="pricing-card popular fade-in">
                 <div class="pricing-badge">Le plus populaire</div>
@@ -1584,7 +1586,7 @@
                     <li><span class="check">✓</span> Statistiques avancées</li>
                     <li><span class="check">✓</span> Support prioritaire</li>
                 </ul>
-                <button class="pricing-btn">Commencer</button>
+                <a href="#contact" class="pricing-btn" style="background: linear-gradient(135deg, var(--orange) 0%, var(--orange-light) 100%); color: white; border-color: transparent;" onclick="document.getElementById('plan').value='pro'; var el = document.getElementById('contact-form'); el.scrollIntoView({behavior:'smooth', block:'center'}); return false;">Commencer</a>
             </div>
             <div class="pricing-card fade-in">
                 <h3>Premium</h3>
@@ -1600,7 +1602,7 @@
                     <li><span class="check">✓</span> Account manager dédié</li>
                     <li><span class="check">✓</span> SLA garanti</li>
                 </ul>
-                <button class="pricing-btn">Commencer</button>
+                <a href="#contact" class="pricing-btn" onclick="document.getElementById('plan').value='premium'; var el = document.getElementById('contact-form'); el.scrollIntoView({behavior:'smooth', block:'center'}); return false;">Commencer</a>
             </div>
         </div>
     </section>
@@ -1689,10 +1691,10 @@
             <div class="contact-form fade-in" id="contact-form">
                 <h3>Réserver une démo</h3>
                 <p>Remplissez ce formulaire, nous vous contactons sous 24h.</p>
-                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Merci ! Nous vous contacterons sous 24h pour planifier votre démo.');">
+                <form action="mailto:contentclips.studios@gmail.com" method="get" enctype="text/plain">
                     <div class="form-group">
                         <label for="name">Nom complet</label>
-                        <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                        <input type="text" id="name" name="nom" placeholder="Votre nom" required>
                     </div>
                     <div class="form-group">
                         <label for="restaurant">Nom du restaurant</label>
@@ -1700,11 +1702,11 @@
                     </div>
                     <div class="form-group">
                         <label for="city">Ville</label>
-                        <input type="text" id="city" name="city" placeholder="Paris, Bruxelles, Londres..." required>
+                        <input type="text" id="city" name="ville" placeholder="Paris, Bruxelles, Londres..." required>
                     </div>
                     <div class="form-group">
                         <label for="phone">Téléphone WhatsApp</label>
-                        <input type="tel" id="phone" name="phone" placeholder="+33 6 12 34 56 78" required>
+                        <input type="tel" id="phone" name="telephone" placeholder="+33 6 12 34 56 78" required>
                     </div>
                     <div class="form-group">
                         <label for="plan">Plan qui vous intéresse</label>
